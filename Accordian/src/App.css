@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.accordian {
+  border-radius: 20px;
+  width: 400px;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: bisque;
+}
+.wrapper button{
+  padding: 10px 15px;
+  background-color: green;
+  cursor: pointer;
+  border-radius: 10px;
+  color: white;
+}
