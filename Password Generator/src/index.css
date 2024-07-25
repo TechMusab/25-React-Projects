@@ -1,0 +1,60 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: white;
+}
+.container{
+  height: 150px;
+  width: 500px;
+  background-color: gray;
+  margin: 0 auto;
+  border-radius: 20px;
+  padding:8px 0;
+  margin-top: 30vh;
+}
+
+.passwordinput{
+  width: 80%;
+  height: 40px;
+  border-radius: 6px;
+font-size:20px;
+  border: none;
+  outline: none;
+  color: black;
+}
+.inputcontainer{
+  margin: 12px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.inputcontainer button{
+  width: 60px;
+  height: 30px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+}
+.myinputs{
+  width: 95%;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+}
+.myinputs label{
+  color: white;
+  font-size: 19px;
+
+}
+.myinputs .check{
+ transform: scale(1.5);
+  cursor: pointer;
+}
