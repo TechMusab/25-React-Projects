@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import QUESTIONS from "../../questioons";
 import quizcompleteimg from "../assets/quiz-complete.png";
 export default function Quiz(props) {
@@ -14,6 +14,15 @@ export default function Quiz(props) {
       </div>
     );
   }
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setAnswers((prev) => [...prev, null]);
+    }, 5000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
   const questionindex = answers.length;
   const shuffledanswers = [...QUESTIONS[questionindex].answers];
   shuffledanswers.sort((a, b) => Math.random() - 0.5);
