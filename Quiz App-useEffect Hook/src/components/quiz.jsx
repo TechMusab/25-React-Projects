@@ -1,13 +1,13 @@
 import React, { useState } from "react";
+import QUESTIONS from "../../questioons";
 
 export default function Quiz(props) {
-  const [Question, setQuestion] = useState(0);
   const [answers, setAnswers] = useState([]);
+  const questionindex = answers.length;
 
   return (
-    <>
-      <p>Active Question</p>
-      <div></div>
-    </>
+    <div id="question">
+      <h2>{QUESTIONS[questionindex].text}</h2>
+    </div>
   );
 }
