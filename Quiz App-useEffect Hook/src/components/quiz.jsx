@@ -1,17 +1,11 @@
 import React, { useState, useEffect } from "react";
 import QUESTIONS from "../../questioons";
 import quizcompleteimg from "../assets/quiz-complete.png";
+import Progressbar from "./progressbar";
 export default function Quiz(props) {
   const [answers, setAnswers] = useState([]);
-  useEffect(() => {
-    if(answers.length === QUESTIONS.length) {
-      return;
-    }
-    const timer=setTimeout(() => {
-      setAnswers((prev) => [...prev, null]);
-    }, 5000);
-    return () => clearTimeout(timer);
-  }, [answers]);
+
+
   function handleselectanswer(answer) {
     setAnswers((prev) => [...prev, answer]);
   }
@@ -30,6 +24,7 @@ export default function Quiz(props) {
   return (
     <div id="quiz">
       <div id="question">
+    <Progressbar addanswer={()=> setAnswers((prev) => [...prev, null])}></Progressbar>
         <h2>{QUESTIONS[questionindex].text}</h2>
         <ul id="answers">
           {shuffledanswers.map((answer) => {
