@@ -10,6 +10,7 @@ export default function Quiz(props) {
   const questionindex = answers.length;
 
   return (
+    <div id="quiz">
     <div id="question">
       <h2>{QUESTIONS[questionindex].text}</h2>
       <ul id="answers">
@@ -23,6 +24,7 @@ export default function Quiz(props) {
           );
         })}
       </ul>
+    </div>
     </div>
   );
 }
