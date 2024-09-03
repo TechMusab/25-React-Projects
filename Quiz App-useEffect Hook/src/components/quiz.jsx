@@ -3,6 +3,15 @@ import QUESTIONS from "../../questioons";
 import quizcompleteimg from "../assets/quiz-complete.png";
 export default function Quiz(props) {
   const [answers, setAnswers] = useState([]);
+  useEffect(() => {
+    if(answers.length === QUESTIONS.length) {
+      return;
+    }
+    const timer=setTimeout(() => {
+      setAnswers((prev) => [...prev, null]);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [answers]);
   function handleselectanswer(answer) {
     setAnswers((prev) => [...prev, answer]);
   }
@@ -14,15 +23,6 @@ export default function Quiz(props) {
       </div>
     );
   }
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setAnswers((prev) => [...prev, null]);
-    }, 5000);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
   const questionindex = answers.length;
   const shuffledanswers = [...QUESTIONS[questionindex].answers];
   shuffledanswers.sort((a, b) => Math.random() - 0.5);
