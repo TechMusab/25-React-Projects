@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import QUESTIONS from "../../questioons";
 import quizcompleteimg from "../assets/quiz-complete.png";
 import Progressbar from "./progressbar";
-export default function Quiz(props) {
+export default function Quiz() {
   const [answers, setAnswers] = useState([]);
 
 
@@ -24,7 +24,7 @@ export default function Quiz(props) {
   return (
     <div id="quiz">
       <div id="question">
-    <Progressbar addanswer={()=> setAnswers((prev) => [...prev, null])}></Progressbar>
+    <Progressbar key={questionindex} addanswer={()=> setAnswers((prev) => [...prev, null])}></Progressbar>
         <h2>{QUESTIONS[questionindex].text}</h2>
         <ul id="answers">
           {shuffledanswers.map((answer) => {
