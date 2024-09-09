@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import QUESTIONS from "../../questioons";
+import QUESTIONS from "../../questions";
 import quizcompleteimg from "../assets/quiz-complete.png";
 import Progressbar from "./progressbar";
 export default function Quiz() {
